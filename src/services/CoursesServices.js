@@ -11,17 +11,16 @@ const getAllCourses = async () => {
     return []
 
 }
-
 const getIdCourses = async (uuid) => {
     try {
-        const {data} = await instanceAxios.get('/purchase/'+uuid);
+        const {data} = await instanceAxios.get(`/purchase/${uuid}`);
+        console.log(data);
         return data;
 
     } catch (e) {
         console.error(e);
     }
-    return null;
+    return null
 
 }
 export {getAllCourses,getIdCourses};
-

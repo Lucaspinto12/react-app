@@ -1,14 +1,14 @@
 import PropTypes from "prop-types";
 
-const ListComponent = (props) => {
+const ListComponentPurchase = (props) => {
     return (
         <div style={
             {
                 width: "100%"
             }
         }>
-            <center>
-            <h1>{props.title}</h1>
+    <center>
+            <h1>{props.head}</h1>
             <table style={
                 {
                     textAlign:"center",
@@ -22,9 +22,9 @@ const ListComponent = (props) => {
                 }>
                 <tr>
                     <th>Nº</th>
-                    <th>Nome do carro</th>
-                    <th>Modelo</th>
-                    <th>Ano</th>
+                    <th>Preço</th>
+                    <th>Quantidade</th>
+                    <th>Amount</th>
                 </tr>
                 </thead>
                 <tbody style={
@@ -33,25 +33,24 @@ const ListComponent = (props) => {
                     }
                 }>
                 {
-                    props.items.map((el,idx) => (
+                    props.items && props.items.map((el,idx) => (
                         <tr key={idx}>
                             <td>{idx + 1}</td>
-                            <td>{el.name}</td>
-                            <td>{el.model}</td>
-                            <td>{el.year}</td>
+                            <td>{el.quantity}</td>
+                            <td>{el.price}</td>
+                            <td>{el.amount}</td>
                         </tr>
                     ))}
                 </tbody>
             </table>
-            </center>
+    </center>
         </div>
-
     )
 }
 
-ListComponent.propTypes = {
+ListComponentPurchase.propTypes = {
     title: PropTypes.string.isRequired,
     head: PropTypes.string.isRequired,
     items: PropTypes.array.isRequired,
 };
-export default ListComponent;
+export default ListComponentPurchase;
