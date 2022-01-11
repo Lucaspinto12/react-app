@@ -1,54 +1,33 @@
 import PropTypes from "prop-types";
+import {Button, Table} from "react-bootstrap";
 
 const ListComponent = (props) => {
     return (
-        <div style={
+            <Table striped bordered hover>
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Nome do Carro</th>
+                <th>Modelo</th>
+                <th>Ano</th>
+            </tr>
+            </thead>
+            <tbody>
             {
-                width: "100%"
-            }
-        }>
-            <center>
-            <h1>{props.title}</h1>
-            <table style={
-                {
-                    textAlign:"center",
-                    width: "80%"
-                }
-            }>
-                <thead style={
-                    {
-                        background: "black"
-                    }
-                }>
-                <tr>
-                    <th>Nº</th>
-                    <th>Nome do carro</th>
-                    <th>Modelo</th>
-                    <th>Ano</th>
-                </tr>
-                </thead>
-                <tbody style={
-                    {
-                        background: "#17BA09"
-                    }
-                }>
-                {
-                    props.items.map((el,idx) => (
-                        <tr key={idx}>
-                            <td>{idx + 1}</td>
-                            <td>{el.name}</td>
-                            <td>{el.model}</td>
-                            <td>{el.year}</td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
-            </center>
-        </div>
+                props.items.map((el, idx) => (
+                    <tr key={idx}>
+                        <td>{idx + 1}</td>
+                        <td>{el.name}</td>
+                        <td>{el.model}</td>
+                        <td>{el.year}</td>
+                    </tr>
+                ))}
+            <Button variant="primary" href={'/CrierCar'}>Cadastrar um novo carro</Button>{' '}
+            </tbody>
+        </Table>
 
     )
 }
-
 ListComponent.propTypes = {
     title: PropTypes.string.isRequired,
     head: PropTypes.string.isRequired,
