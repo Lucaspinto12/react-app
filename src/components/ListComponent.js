@@ -17,7 +17,8 @@ const ListComponent = (props) => {
             }>
                 <thead style={
                     {
-                        background: "black"
+                        background: "#002663",
+                        color: "#ffffff",
                     }
                 }>
                 <tr>
@@ -29,7 +30,8 @@ const ListComponent = (props) => {
                 </thead>
                 <tbody style={
                     {
-                        background: "#17BA09"
+                        background: "#0256db",
+                        color: "#ffffff"
                     }
                 }>
                 {
